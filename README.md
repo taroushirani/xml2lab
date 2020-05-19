@@ -64,6 +64,7 @@ xml2lab [ options ] [ infile ]
                   (Currently, you can set only Japanese)
     -x dir      : dictionary directory               [  N/A  ]
     -m          : output monophone label             [ false ]
+    -t          : time format of output label(0,1,2) [   1   ]
     -o file     : filename of output lab file        [  N/A  ]
   infile:
     MusicXML file

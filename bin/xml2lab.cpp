@@ -6,6 +6,7 @@
 #include <iostream>
 #include <sstream>
 #include <cstdlib>
+#include <cstdio>
 
 #include "sinsy/lib/converter/Converter.h"
 #include "sinsy/lib/label/LabelMaker.h"
@@ -41,6 +42,7 @@ void usage()
     std::cout << "                  (Currently, you can set only Japanese)      " << std::endl;
     std::cout << "    -x dir      : dictionary directory               [  N/A  ]" << std::endl;
     std::cout << "    -m          : output monophone label             [ false ]" << std::endl;
+    std::cout << "    -t          : time format of output label(0,1,2) [   1   ]" << std::endl;
     std::cout << "    -o file     : filename of output lab file        [  N/A  ]" << std::endl;
     std::cout << "  infile:" << std::endl;
     std::cout << "    MusicXML file" << std::endl;
@@ -57,9 +59,10 @@ int main(int argc, char **argv)
     std::string xml;
     std::string config;
     std::string lab;
-    
+    std::string timeFlagStr;
     std::string languages(DEFAULT_LANGS);
     bool monophoneFlag(false);
+    int timeFlag(1);
     
     int i(1);
     for(; i< argc; i++){
@@ -85,6 +88,16 @@ int main(int argc, char **argv)
 	    case 'm' :
 		monophoneFlag = true;
 		break;
+	    case 't' :
+		timeFlagStr = argv[++i];
+		if (timeFlagStr.size() == 0) {
+		    std::cerr << "[ERROR] Must specify time format" << std::endl;
+		    usage();
+		    std::exit(EXIT_FAILURE);
+		} else {
+		    timeFlag = atoi(timeFlagStr.c_str());
+		    break;
+		}
 	    case 'h' :
 		usage();
 		std::exit(EXIT_SUCCESS);
@@ -128,7 +141,7 @@ int main(int argc, char **argv)
     labelMaker.fix();
 
     sinsy::LabelStrings label;
-    labelMaker.outputLabel(label, monophoneFlag, 1, 2);
+    labelMaker.outputLabel(label, monophoneFlag, 1, timeFlag);
 
     std::ostringstream oss;
 
