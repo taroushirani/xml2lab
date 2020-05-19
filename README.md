@@ -4,6 +4,7 @@ This program enable you to convert MusicXML file to fullcontext HTS label for si
 
 This program uses many codes from [sinsy](http://www.sinsy.jp/), the HMM-based singing voice synthesis system.  The original copyright notices are as follows:
 
+```
 /* ----------------------------------------------------------------- */
 /*           The HMM-Based Singing Voice Synthesis System "Sinsy"    */
 /*           developed by Sinsy Working Group                        */
@@ -44,6 +45,7 @@ This program uses many codes from [sinsy](http://www.sinsy.jp/), the HMM-based s
 /* OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE           */
 /* POSSIBILITY OF SUCH DAMAGE.                                       */
 /* ----------------------------------------------------------------- */
+```
 
 ## Installation
 
