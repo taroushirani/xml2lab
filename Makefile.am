@@ -1,7 +1,7 @@
 EXTRA_DIST = AUTHORS COPYING ChangeLog INSTALL NEWS README.md
 SUBDIRS = bin
 
-dicdir = $(prefix)/$(PACKAGE)/dic
+dicdir = $(datadir)/$(PACKAGE)/dic
 dic_DATA = sinsy/dic/*.conf sinsy/dic/*.table sinsy/dic/*.macron
 
 DISTCLEANFILES = *.log *.out *~ config/*~ include/*~
