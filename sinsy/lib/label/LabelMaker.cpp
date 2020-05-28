@@ -1346,7 +1346,8 @@ void LabelMaker::fix()
       const NoteList::iterator itrBegin(noteList.begin());
       const NoteList::iterator itrEnd(noteList.end());
       for (NoteList::iterator itr(itrBegin); itrEnd != itr; ++itr) {
-         if (!(*itr)->isRest() && (*itr)->hasBreathToNext()) { // note has breath symbol
+//         if (!(*itr)->isRest() && (*itr)->hasBreathToNext()) { // note has breath symbol
+	  if ((*itr)->hasBreathToNext()) { // note has breath symbol
             if ((itrEnd != itr + 1) && !(*(itr + 1))->isRest()) { // next note is not rest
                (*itr)->setBreathPhoneme();
             }
