@@ -1,2 +1,8 @@
 *~
 autom4te.cache
+.dirstamp
+*.o
+.deps
+config.log
+config.status
+
