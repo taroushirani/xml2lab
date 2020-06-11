@@ -1,6 +1,6 @@
 # xml2lab
 
-This program enable you to convert MusicXML file to fullcontext HTS label for singing voice synthesis.
+This program enables you to convert MusicXML file to full-context HTS label for singing voice synthesis.
 
 This program uses many codes from [sinsy](http://www.sinsy.jp/), the HMM-based singing voice synthesis system.  The original copyright notices are as follows:
 

@@ -39,6 +39,10 @@
 /* POSSIBILITY OF SUCH DAMAGE.                                       */
 /* ----------------------------------------------------------------- */
 
+#ifdef DEBUG
+#include <iostream>
+#endif
+
 #include <algorithm>
 #include <sstream>
 #include <limits>
@@ -1190,6 +1194,11 @@ void LabelMaker::fix()
       for (NoteList::iterator itr(itrBegin); itrEnd != itr; ++itr) {
          // phrase
          {
+#ifdef DEBUG
+	     std::cout << ((*itr)->isRest() ? "Rest" : "Note" ) << " " 
+		       << ((*itr)->hasBreathToNext() ? "True" : "False" )
+		       << std::endl;
+#endif	     
             if (!(*itr)->isRest()) {
                if ((itr == itrBegin) || (*(itr - 1))->isRest() || (*(itr - 1))->hasBreathToNext()) {
                   phraseList.push_back(new NoteGroup());

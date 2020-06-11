@@ -132,7 +132,9 @@ int main(int argc, char **argv)
 	std::cerr << "[ERROR] Failed to parse Xml file : " << xml << std::endl;
 	std::exit(EXIT_FAILURE);
     }
-
+#ifdef DEBUG
+    xmlReader.getXmlData()->toStringStream(std::cout);
+#endif
     sinsy::ScoreDoctor score;
     score << xmlReader;
     
